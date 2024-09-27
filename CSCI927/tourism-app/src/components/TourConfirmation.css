@@ -1,0 +1,157 @@
+/* TourConfirmation.css */
+.app-container {
+    font-family: "Comic Sans MS", cursive, sans-serif; /* Apply globally */
+    background: linear-gradient(135deg, #e9eff9 0%, #f4f4f9 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    width: 100%;
+    background-color: #0056b3;
+    padding: 15px 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: white;
+}
+
+.logo-link:hover .logo {
+    transform: scale(1.05);
+}
+
+.confirmation-section {
+    background: white;
+    padding: 30px;
+    margin-top: 190px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    width: 90%;
+    max-width: 650px;
+    text-align: left;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.confirmation-section h1 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.detail-item {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #444;
+}
+
+.detail-item strong {
+    color: #000;
+    margin-right: 10px;
+}
+
+.footer {
+    width: 105%;
+    padding: 30px 0;
+    background-color: #e0e0e0;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    margin-top: auto;
+    border-top: 2px solid #ccc;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.return-button {
+    background-color: #009688;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.return-button:hover {
+    background-color: #00796b;
+}
+
+.print-button {
+    background-color: #006496;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.print-button:hover {
+    background-color: #003b79;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+@media print {
+    body, html {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+    }
+
+    .app-container {
+        min-height: 0;  /* Override any minimum height set for on-screen viewing */
+        height: auto;  /* Allow container to grow as tall as its content */
+        overflow: visible;  /* Ensure all content can be printed */
+        page-break-inside: avoid;  /* Avoid breaks within the main container */
+    }
+
+    header, footer {
+        page-break-after: avoid;  /* Avoid breaking the page after headers and footers */
+    }
+
+    .header, .footer {
+        position: static;  /* Ensure headers and footers are part of the flow */
+    }
+
+    .hide-on-print {
+        display: none;  /* Hide elements that shouldn't be printed */
+    }
+}

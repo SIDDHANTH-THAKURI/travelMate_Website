@@ -1,119 +1,154 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body styling */
-  body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  /* Header */
-  .header {
-    background-color: #222;
-    padding: 1rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .header .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #fff;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #f8b400;
-  }
-  
-  /* Hero Section */
-  .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .hero-content {
-    text-align: center;
-    color: #fff;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* Body styling */
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #333;
+  overflow-x: hidden;
+  background-color: #f4f4f4; /* Adds a light grey background for any overflow content */
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, rgba(195, 74, 74, 0.701), rgba(52, 147, 166, 0.652)); /* Subtle gradient for depth */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Soft border for subtle separation */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); /* Adds depth with shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header:hover {
+  background: linear-gradient(135deg, rgba(187, 43, 43, 0.796), rgba(32, 171, 179, 0.95)); /* Darken on hover for interactive feel */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); /* Intensify shadow on hover */
+}
+
+.header .logo:hover {
+  transform: scale(1.05); /* Slight scale to give dynamic feel on hover */
+}
+
+.header .logo {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 2rem; /* Slightly larger for better visibility */
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.header .logo-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  background-color: rgba(213, 50, 50, 0.315); /* Darker background */
+  color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 80%;
+  max-width: 800px;
+}
+
+
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(145deg, rgba(255, 184, 0, 0.8), rgba(255, 84, 17, 0.8));
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer; /* This line changes the cursor to a pointer */
+}
+
+.btn:hover {
+  background: linear-gradient(145deg, rgba(255, 184, 0, 1), rgba(255, 84, 17, 1));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  transform: translateY(-5px); /* Optional: adds a small animation on hover */
+}
+
+
+.loading-overlay {
+  position: fixed; /* Covers the entire view */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* Ensure it is higher than any other content */
+  color: white;
+  font-size: 1.5rem;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
+    font-size: 2.5rem;
   }
-  
+
   .hero p {
     font-size: 1.3rem;
-    margin-bottom: 2rem;
   }
-  
+
   .cta-buttons {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
   }
-  
-  .btn-primary, .btn-secondary {
-    padding: 0.8rem 2rem;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+
+  .btn {
+    width: 100%;
   }
-  
-  .btn-primary {
-    background-color: #f8b400;
-    color: #222;
-  }
-  
-  .btn-secondary {
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-  }
-  
-  .btn-primary:hover {
-    background-color: #ffcf40;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #fff;
-    color: #222;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-  
-    .cta-buttons {
-      flex-direction: column;
-      gap: 1rem;
-    }
-  }
-  
+}

@@ -1,0 +1,88 @@
+.app-container {
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1527095655060-4026c4af2b25?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHN3aXR6ZXJsYW5kfGVufDB8fDB8fHww') !important;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Comic Sans MS", cursive, sans-serif; /* Apply globally */
+}
+
+input::placeholder {
+    font-family: "Comic Sans MS", cursive, sans-serif; /* Sets the placeholder font family */
+    color: #888; /* Optional: change the color of the placeholder text to enhance visibility */
+}
+
+.payment-container {
+    width: 100%;
+    max-width: 500px; /* Slightly larger to accommodate labels and inputs */
+    margin: auto;
+    padding: 30px;
+    background-color: rgba(255, 227, 227, 0.9); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Deeper shadow for better contrast */
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1px; /* Increased gap for better separation */
+}
+
+.payment-form label {
+    display: block; /* Ensure labels are block-level for better control */
+    margin-bottom: 5px; /* Space between label and input */
+    color: #333; /* Label color for readability */
+    font-weight: bold; /* Bold labels for emphasis */
+}
+
+.payment-form input,
+.payment-form select {
+    padding: 12px;
+    border: 2px solid #ced4da; /* Slightly thicker border */
+    border-radius: 5px;
+    font-size: 16px;
+    color: #495057;
+    background-color: #fff;
+    width: 100%; /* Ensure inputs fill the form */
+}
+
+.payment-form input[readonly] {
+    background-color: #e9ecef;
+    color: #495057;
+    cursor: not-allowed;
+}
+
+.payment-form button {
+    padding: 15px; /* More padding for better touch */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    width: auto; /* Auto width for better sizing */
+    align-self: center; /* Center buttons in the form */
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.payment-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.payment-form p {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    display: flex; /* Flex to align inline elements */
+    justify-content: space-between; /* Space between cost and button */
+    align-items: center; /* Vertically center items */
+}
+
+/* Specific styles for pay and confirm buttons if needed */
+.payButton, .confirmButton {
+    width: 50%; /* Half-width buttons side by side */
+    margin: 0; /* Remove margin for alignment */
+}
