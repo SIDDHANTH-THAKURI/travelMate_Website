@@ -1,6 +1,6 @@
 /* TourConfirmation.css */
 .app-container {
-    font-family: "Comic Sans MS", cursive, sans-serif; /* Apply globally */
+    font-family: "Comic Sans MS", cursive, sans-serif;
     background: linear-gradient(135deg, #e9eff9 0%, #f4f4f9 100%);
     min-height: 100vh;
     padding: 20px;

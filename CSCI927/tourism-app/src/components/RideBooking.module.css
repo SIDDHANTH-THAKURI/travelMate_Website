@@ -1,0 +1,86 @@
+/* RideBooking.module.css */
+.container {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f5f7fa;
+    background-image: url("https://images.unsplash.com/photo-1517243667550-44d5628894d0?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;        /* Cover the entire container */
+    background-position: center;    /* Center the background image */
+    background-repeat: no-repeat;   /* Do not repeat the image */
+}
+
+
+.title {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 2.5rem;
+    color: #0062ff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+    padding: 10px 20px; /* Add padding around the text */
+    background-color: rgba(189, 216, 232, 0.925); /* Semi-transparent white background */
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.form {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.button {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #003d80;
+}
+
+.details {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 16px;
+}
+.loadn{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: rgb(255, 247, 0);
+    box-shadow: #f6ff00;
+}

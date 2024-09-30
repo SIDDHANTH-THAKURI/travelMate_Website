@@ -1,0 +1,104 @@
+.room-booking-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background: linear-gradient(135deg, #e9eff9 0%, #f4f4f9 100%);
+}
+
+.room-booking-container h1 {
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-section label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-section select,
+.form-section input,
+.datepicker__input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+select{
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-section button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.form-section button:hover {
+    background-color: #0056b3;
+}
+
+.available-rooms,
+.booking-available {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.available-rooms h2,
+.booking-available h3 {
+    margin-bottom: 10px;
+    color: #0056b3;
+}
+
+.booking-available button {
+    margin-top: 10px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Add more specific styles if needed */
+/* Customizing the React DatePicker */
+.react-datepicker-wrapper {
+    width: 100%;
+}
+
+.react-datepicker__input-container input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.react-datepicker-popper {
+    z-index: 2;
+}

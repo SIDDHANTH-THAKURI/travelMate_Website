@@ -35,8 +35,7 @@ function LandingPage() {
           </div>
         </div>
       </section>
-{/*       
-      {loading && <div className="loading-overlay">Loading...</div>} */}
+      
       {loading && (
         <div class="loading-overlay">
           <img src="https://cdn.pixabay.com/animation/2023/10/08/03/19/03-19-26-213_512.gif" alt="Loading..." style={{ width: '100px' }} />

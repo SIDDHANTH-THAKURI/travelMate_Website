@@ -12,6 +12,8 @@ import Login from './components/Login';
 import TourDetails from './components/TourDetails';
 import Payment from './components/Payment';
 import TourConfirmation from './components/TourConfirmation';
+import PricingAndInvoice from './components/PricingAndInvoice';
+import RideBookingConfirmation from './components/RideBookingConfirmation';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/TourDetails" element={<TourDetails />} />
         <Route path="/Payment" element={<Payment/>} />
         <Route path="/TourConfirmation" element={<TourConfirmation/>} />
+        <Route path="/PricingAndInvoice" element={<PricingAndInvoice/>} />
+        <Route path="/RideBookingConfirmation" element={<RideBookingConfirmation/>} />
       </Routes>
     </Router>
   );

@@ -4,6 +4,7 @@ const mysql = require('mysql2');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
+const moment = require('moment');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -112,6 +113,56 @@ app.get('/TourConfirmation/:email', async (req, res) => {
         res.status(500).send('Server error');
     }
 });
+
+
+// Book a room
+app.post('/api/bookings', (req, res) => {
+    const { email, place, roomType, date, totalCost } = req.body;
+    const query = 'INSERT INTO bookings (email, place, room_type, date, total_cost) VALUES (?, ?, ?, ?, ?)';
+    db.query(query, [email, place, roomType, date, totalCost], (err, result) => {
+        if (err) {
+            console.error('Error inserting booking:', err);
+            res.status(500).send('Error booking');
+        } else {
+            res.send({ message: 'Booking successful', bookingId: result.insertId });
+        }
+    });
+});
+
+app.use(bodyParser.json());
+app.post('/storeRideDetails', (req, res) => {
+
+    let { email, pickup, drop, date, totalCost } = req.body; 
+    date = moment(date).format('YYYY-MM-DD HH:mm:ss');
+    const query = 'INSERT INTO RideBookingDetails (email, pickup_location, drop_location, datetime, total_cost) VALUES (?, ?, ?, ?, ?)';
+    
+    db.query(query, [email, pickup, drop, date, totalCost], (err, result) => {
+        if (err) {
+            console.error('Failed to insert booking details:', err);
+            res.status(500).send({ status: 'error', message: 'Failed to store booking details.' });
+        } else {
+            res.send({ status: 'success', message: 'Booking details stored successfully.' });
+        }
+    });
+});
+
+app.get('/rideDetailsByEmail/:email', async (req, res) => {
+    const { email } = req.params;
+    try {
+        const query = 'SELECT * FROM RideBookingDetails WHERE email = ?';
+        const [results] = await db.promise().query(query, [email]);
+        if (results.length > 0) {
+            res.json(results[0]);
+        } else {
+            res.status(404).send('Booking not found');
+        }
+    } catch (error) {
+        console.error('Error fetching booking details:', error);
+        res.status(500).send('Server error');
+    }
+});
+
+
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

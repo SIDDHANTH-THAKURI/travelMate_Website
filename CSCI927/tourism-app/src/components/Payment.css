@@ -84,5 +84,5 @@ input::placeholder {
 /* Specific styles for pay and confirm buttons if needed */
 .payButton, .confirmButton {
     width: 50%; /* Half-width buttons side by side */
-    margin: 0; /* Remove margin for alignment */
+    margin: 0; 
 }

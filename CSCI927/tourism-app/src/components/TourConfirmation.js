@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './TourConfirmation.css'; // Make sure to import the CSS file
+import './TourConfirmation.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlane } from '@fortawesome/free-solid-svg-icons';
 import './LandingPage.css';
