@@ -63,7 +63,7 @@ function PricingAndInvoice() {
         .then(response => response.json())
         .then(data => {
             alert("Thank you for booking. We will get in touch with you soon!");
-            window.location.href = '/'; // Redirect to home
+            window.location.href = '/landing'; 
         })
         .catch(error => {
             console.error('Error:', error);

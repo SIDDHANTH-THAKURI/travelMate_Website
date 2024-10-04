@@ -21,7 +21,8 @@ function TourConfirmation() {
     const fetchData = async () => {
       try {
         const email = localStorage.getItem('userEmail'); 
-        const response = await fetch(`http://localhost:5000/TourConfirmation/${email}`);
+        const referenceNumber = localStorage.getItem('referenceNumber');
+        const response = await fetch(`http://localhost:5000/TourConfirmation?email=${email}&referenceNumber=${referenceNumber}`);
         if (!response.ok) {
           throw new Error('Failed to fetch details');
         }
@@ -72,7 +73,7 @@ function TourConfirmation() {
       </div><br/>
       
       <footer className="footer">
-      <div><a href="/" className="return-button">Return to Home</a></div>
+      <div><a href="/landing" className="return-button">Return to Home</a></div>
         <div className="contact-info">
           <p>If you have any questions, please contact us:</p>
           <p>📞 XXXXXXXXXX</p>

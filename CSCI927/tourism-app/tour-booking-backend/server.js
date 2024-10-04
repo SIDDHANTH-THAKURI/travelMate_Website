@@ -50,7 +50,7 @@ app.post('/login', async (req, res) => {
         const [results] = await db.promise().query('SELECT * FROM users WHERE email = ?', [email]);
         if (results.length > 0) {
             const user = results[0];
-            const passwordMatch = await bcrypt.compare(password, user.password); // Ensure this is used
+            const passwordMatch = await bcrypt.compare(password, user.password); 
             if (passwordMatch) {
                 res.json({ message: "Login successful", userId: user.id });
             } else {
@@ -82,7 +82,10 @@ app.post('/payment', async (req, res) => {
                 [userId, email, name, contact, startDate, packageSelected, numberOfPeople, totalCost, paymentStatus, referenceNumber]
             );
 
-            res.status(200).send('Booking confirmed successfully');
+            res.status(200).json({
+                message: 'Booking confirmed successfully',
+                referenceNumber: referenceNumber
+            });
         } else {
             res.status(404).send('User not found');
         }
@@ -94,15 +97,15 @@ app.post('/payment', async (req, res) => {
 
 
 
-app.get('/TourConfirmation/:email', async (req, res) => {
-    const { email } = req.params;
+app.get('/TourConfirmation', async (req, res) => {
+    const { email, referenceNumber } = req.query;
     try {
         const query = `
             SELECT email, name, contact, package_selected, number_of_people, total_cost, payment_status, start_date, reference_number
             FROM payments
-            WHERE email = ?
+            WHERE email = ? AND reference_number = ?
         `;
-        const [results] = await db.promise().query(query, [email]);
+        const [results] = await db.promise().query(query, [email, referenceNumber]);
         if (results.length > 0) {
             res.json(results[0]); 
         } else {
@@ -130,8 +133,9 @@ app.post('/api/bookings', (req, res) => {
 });
 
 app.use(bodyParser.json());
-app.post('/storeRideDetails', (req, res) => {
 
+
+app.post('/storeRideDetails', (req, res) => {
     let { email, pickup, drop, date, totalCost } = req.body; 
     date = moment(date).format('YYYY-MM-DD HH:mm:ss');
     const query = 'INSERT INTO RideBookingDetails (email, pickup_location, drop_location, datetime, total_cost) VALUES (?, ?, ?, ?, ?)';

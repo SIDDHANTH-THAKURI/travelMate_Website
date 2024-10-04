@@ -55,10 +55,12 @@ function Payment() {
           paymentStatus:  paymentProcessed? 'Paid':'Not Paid'
         })
       });
+      const result = await response.json();
       if (response.ok) {
         setPaymentProcessed(true);
         setTimeout(() => {
             setLoading(false);
+            localStorage.setItem('referenceNumber', result.referenceNumber);
             navigate('/TourConfirmation');
             }, 4000);
       } else {
@@ -171,7 +173,7 @@ function Payment() {
             Pay
           </button></p> 
             <button type="submit" style={isHovered ? hoverStyle : styles.button} onMouseOver={() => setIsHovered(true)}
-        onMouseOut={() => setIsHovered(false)}>Confirm Payment</button>
+        onMouseOut={() => setIsHovered(false)}>Confirm Booking</button>
         </form>
         </div>
     </div>

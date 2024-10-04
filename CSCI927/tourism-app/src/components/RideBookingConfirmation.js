@@ -42,7 +42,7 @@ function RideBookingConfirmation() {
     };
 
     const handleReturnHome = () => {
-        navigate('/'); // Navigate to the home route
+        navigate('/landing'); // Navigate to the home route
     };
 
     const style={
