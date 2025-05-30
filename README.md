@@ -50,6 +50,7 @@ git clone https://github.com/SIDDHANTH-THAKURI/travelMate_Website.git
 
 # Move project to your web server directory (e.g., htdocs in XAMPP)
 mv travelMate_Website /xampp/htdocs/
+```
 
 💾 Database Setup
 Launch phpMyAdmin
