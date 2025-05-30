@@ -28,9 +28,9 @@
 
 ## 🛠️ Tech Stack
 
-| Frontend   | Backend | Database | Tools       |
-|------------|---------|----------|-------------|
-| HTML5/CSS3 | PHP     | MySQL    | Git, XAMPP  |
+| Frontend   | Backend          | Database | Tools       |
+|------------|------------------|----------|-------------|
+| HTML5/CSS3 | Node.js, Express | MySQL    | Git, dotenv |
 
 ---
 
@@ -38,9 +38,10 @@
 
 ### 🔧 Prerequisites
 
-- XAMPP or any LAMP/WAMP stack
-- Git
+- Node.js and npm
+- MySQL database
 - A modern browser (Chrome, Firefox, etc.)
+- Git
 
 ### 🧪 Local Setup
 
@@ -48,20 +49,26 @@
 # Clone the repository
 git clone https://github.com/SIDDHANTH-THAKURI/travelMate_Website.git
 
-# Move project to your web server directory (e.g., htdocs in XAMPP)
-mv travelMate_Website /xampp/htdocs/
-```
+# Move project to your working directory
+cd travelMate_Website
 
+# Install backend dependencies
+npm install
+```
 💾 Database Setup
-Launch phpMyAdmin
+Launch MySQL (e.g., via phpMyAdmin or CLI)
 
 Create a new database: travelmate
 
 Import the SQL file: MySql_Database_Script.sql
 
 🌐 Launch
-Start your server and visit:
-http://localhost/travelMate_Website
+Start your backend server:
+node server.js
+# or if you use nodemon:
+nodemon server.js
+Open your frontend React app (if separate) or open the project URL:
+http://localhost:5000
 
 📁 Project Structure
 travelMate_Website/
@@ -71,8 +78,9 @@ travelMate_Website/
 │   └── images/
 ├── includes/
 ├── templates/
-├── index.html
+├── server.js
 ├── MySql_Database_Script.sql
+├── .env.example
 └── README.md
 
 🧑‍💻 Contributing
@@ -101,4 +109,4 @@ All open-source contributors 🌟
 <div align="center">
 ✨ Built with passion by SIDDHANTH-THAKURI ✈️
 
-</div> ```
+</div>
